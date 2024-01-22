@@ -14,8 +14,8 @@ public class LoginSteps extends BasePage {
     private final LogInPage logInPage = new LogInPage();
     private final MainPage mainPage = new MainPage();
 
-    @Given("I access the stack overflow log in page")
-    public void iAccessTheStackOverflowLogInPage() {
+    @Given("I open the stack overflow log in page")
+    public void iOpenTheStackOverflowLogInPage() {
         logInPage.openPage();
     }
 
@@ -44,14 +44,14 @@ public class LoginSteps extends BasePage {
         logInPage.clickLogInButton();
     }
 
-    @Then("I should be presented with the unsuccessful login message {}")
-    public void iShouldBePresentedWithTheUnsuccessfulLoginMessage(String logInvalidationMassage) {
+    @Then("It should be presented with the unsuccessful login message {}")
+    public void itShouldBePresentedWithTheUnsuccessfulLoginMessage(String logInvalidationMassage) {
         Assert.assertTrue(logInPage.getErrorMessage()
                 .equals(logInvalidationMassage), "Error message assertion error");
     }
 
-    @Then("I should be presented the icon home")
-    public void iShouldBePresentedTheIconHome() {
+    @Then("It should be presented the icon home")
+    public void itShouldBePresentedTheIconHome() {
         Assert.assertTrue(mainPage.isHomeIconVisible(), "Icon home is not visible");
     }
 }
